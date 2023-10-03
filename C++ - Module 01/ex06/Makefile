@@ -6,15 +6,15 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:20:57 by nakebli           #+#    #+#              #
-#    Updated: 2023/10/03 20:42:15 by nakebli          ###   ########.fr        #
+#    Updated: 2023/10/03 21:01:06 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Human
+NAME = harlFilter
 
-SRCS = main.cpp CopyFile.cpp
+SRCS = main.cpp Harl.cpp
 
-HERDERS = CopyFile.hpp
+HERDERS = Harl.hpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
