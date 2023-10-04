@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:20:57 by nakebli           #+#    #+#              #
-#    Updated: 2023/10/04 18:38:45 by nakebli          ###   ########.fr        #
+#    Updated: 2023/10/04 18:53:35 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 HERDERS = HumanA.hpp HumanB.hpp Weapon.hpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRCS:.cpp=.o)
 

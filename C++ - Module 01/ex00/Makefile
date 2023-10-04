@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 01:40:33 by nakebli           #+#    #+#              #
-#    Updated: 2023/10/04 18:38:33 by nakebli          ###   ########.fr        #
+#    Updated: 2023/10/04 18:52:48 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 HERDERS = Zombie.hpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRCS:.cpp=.o)
 

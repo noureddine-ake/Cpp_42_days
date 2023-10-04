@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 01:59:24 by nakebli           #+#    #+#              #
-#    Updated: 2023/10/04 18:38:40 by nakebli          ###   ########.fr        #
+#    Updated: 2023/10/04 18:53:21 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
 HERDERS = Zombie.hpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRCS:.cpp=.o)
 

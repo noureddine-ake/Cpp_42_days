@@ -2,7 +2,7 @@ NAME = Reference
 
 SRCS = main.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRCS:.cpp=.o)
 
