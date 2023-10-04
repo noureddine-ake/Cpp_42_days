@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 21:14:48 by nakebli           #+#    #+#             */
-/*   Updated: 2023/10/03 20:42:34 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:36:39 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,10 @@ std::string CopyFile::getFileName()
     return (this->fileName);
 }
 
-// void    CopyFile::printline(std::fstream file)
-// {
-//     std::cout   << this->fileName << std::endl;
-// }
-
 void    CopyFile::create_file(std::string str)
 {
-    std::cout   << this->fileName << std::endl;
     std::ofstream    file(this->fileName);
-    if (file.is_open())
+    if (file.is_open() && !this->to_find.empty())
     {
         std::string line;
         std::ifstream inputFile(str);
@@ -72,7 +66,7 @@ void    CopyFile::create_file(std::string str)
     }
     else
     {
-        std::cout << "Unable to open the file" << std::endl;
+        std::cout << "Error fatal !" << std::endl;
         exit(1);
     }
 }

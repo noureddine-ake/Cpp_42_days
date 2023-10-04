@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:20:57 by nakebli           #+#    #+#              #
-#    Updated: 2023/10/03 21:01:06 by nakebli          ###   ########.fr        #
+#    Updated: 2023/10/04 18:38:54 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,3 +30,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	
+re: fclean all
+
+.PHONY: all clean fclean re

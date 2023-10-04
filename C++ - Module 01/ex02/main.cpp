@@ -7,7 +7,7 @@ int main()
     std::string &ref_str = str;
 
     std::cout << "adress of str: " << &str << std::endl;
-    std::cout << "adress of ptr_str: " << &ptr_str << std::endl;
+    std::cout << "adress of ptr_str: " << ptr_str << std::endl;
     std::cout << "adress of ref_str: " << &ref_str << std::endl;
 
     std::cout << "str: " << str << std::endl;

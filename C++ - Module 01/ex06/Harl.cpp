@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 23:10:34 by nakebli           #+#    #+#             */
-/*   Updated: 2023/10/04 00:23:24 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:06:04 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    Harl::debug()
 {
-    std::cout   << "[ WARNING ]" << std::endl;
+    std::cout   << "[ DEBUG ]" << std::endl;
     std::cout   << "I love having extra bacon for my \n";
     std::cout   << "7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
                 << std::endl;
