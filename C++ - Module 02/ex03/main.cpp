@@ -6,25 +6,27 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 21:29:06 by nakebli           #+#    #+#             */
-/*   Updated: 2023/10/31 13:25:45 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/10/31 18:12:18 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	Point a(Fixed(0), Fixed(0));
+	Point b(Fixed(5), Fixed(0));
+	Point c(Fixed(0), Fixed(5));
+	Point point(Fixed(1), Fixed(1.5f));
+	if (bsp(a, b, c, point))
+		std::cout	<< "the Point x(" << point.getX() << " ," 
+					<< point.getY()
+					<< ") is inside the triangle abc"
+					<< std::endl;
+	else
+		std::cout	<< "the Point x(" << point.getX() << " ," 
+					<< point.getY()
+					<< ") is outside the triangle abc"
+					<< std::endl;
 	return 0;
 }
