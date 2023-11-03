@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:58:48 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/01 19:37:15 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/02 15:01:08 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class Fixed
         Fixed operator--(int);
         static const Fixed& min(const Fixed& a, const Fixed& b);
         static const Fixed& max(const Fixed& a, const Fixed& b);
+        static const Fixed& min(Fixed& a, Fixed& b);
+        static const Fixed& max(Fixed& a, Fixed& b);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

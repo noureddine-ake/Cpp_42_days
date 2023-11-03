@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 21:20:53 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/01 22:37:47 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/02 15:01:53 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,16 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 }
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+    return (a > b ? a : b);
+}
+
+const Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+    return (a < b ? a : b);
+}
+
+const Fixed& Fixed::max(Fixed& a, Fixed& b)
 {
     return (a > b ? a : b);
 }
