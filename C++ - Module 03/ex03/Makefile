@@ -6,15 +6,15 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 20:56:22 by nakebli           #+#    #+#              #
-#    Updated: 2023/11/03 18:03:22 by nakebli          ###   ########.fr        #
+#    Updated: 2023/11/04 16:43:19 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ScavTrap
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
-HERDERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+HERDERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

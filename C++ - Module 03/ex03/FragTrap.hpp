@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:53:20 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 18:00:22 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/04 21:17:29 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public Claptrap
+class FragTrap : virtual public Claptrap
 {
     public:
+        FragTrap ();
         FragTrap (std::string name);
         FragTrap (const FragTrap &obj);
         FragTrap &operator=(const Claptrap& obj);
@@ -25,6 +26,7 @@ class FragTrap : public Claptrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         void highFivesGuys();
+        ~FragTrap();
 };
 
 

@@ -6,11 +6,16 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:53:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:59:59 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/04 21:17:40 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+    std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : Claptrap(name)
 {
@@ -56,4 +61,9 @@ void FragTrap::beRepaired(unsigned int amount)
 void FragTrap::highFivesGuys()
 {
     std::cout << "FragTrap " << _name << " high fives guys" << std::endl;
+}
+
+FragTrap::~FragTrap()
+{
+    std::cout << "FragTrap destructor called" << std::endl;
 }

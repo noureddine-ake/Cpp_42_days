@@ -6,12 +6,17 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:17:46 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:41:20 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/04 21:17:45 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+    std::cout << "ScavTrap default constructor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : Claptrap(name)
 {
@@ -57,4 +62,9 @@ void ScavTrap::beRepaired(unsigned int amount)
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
+}
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << "ScavTrap destructor called" << std::endl;
 }
