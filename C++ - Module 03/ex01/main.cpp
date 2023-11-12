@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:53:20 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:41:46 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/05 20:10:17 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	bot3 = bot2;
 	bot.setAttackDamage(5);
 	bot.attack("eve");
-	bot2.takeDamage(5);
+	bot3.takeDamage(5);
 	bot3.beRepaired(10);
 	bot3.guardGate();
 }

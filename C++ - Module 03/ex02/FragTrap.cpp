@@ -6,11 +6,16 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:53:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:59:59 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/05 20:16:07 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+    std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : Claptrap(name)
 {
@@ -43,17 +48,12 @@ void FragTrap::attack(std::string const & target)
     std::cout << "FragTrap " << _name << " attack " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
 }
 
-void FragTrap::takeDamage(unsigned int amount)
-{
-    std::cout << "FragTrap " << _name << " take " << amount << " points of damage!" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-    std::cout << "FragTrap " << _name << " be repaired " << amount << " points of damage!" << std::endl;
-}
-
 void FragTrap::highFivesGuys()
 {
     std::cout << "FragTrap " << _name << " high fives guys" << std::endl;
+}
+
+FragTrap::~FragTrap()
+{
+    std::cout << "FragTrap destructor called" << std::endl;
 }

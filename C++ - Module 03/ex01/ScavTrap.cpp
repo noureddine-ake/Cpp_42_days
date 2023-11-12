@@ -6,12 +6,17 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:17:46 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:41:20 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:00:04 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+    std::cout << "ScavTrap default constructor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : Claptrap(name)
 {
@@ -44,17 +49,12 @@ void ScavTrap::attack(std::string const & target)
     std::cout << "ScavTrap " << _name << " attack " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
-{
-    std::cout << "ScavTrap " << _name << " take " << amount << " points of damage!" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-    std::cout << "ScavTrap " << _name << " be repaired " << amount << " points of damage!" << std::endl;
-}
-
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
+}
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << "ScavTrap destructor called" << std::endl;
 }

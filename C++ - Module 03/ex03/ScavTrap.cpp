@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:17:46 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/04 21:17:45 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:35:33 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,11 @@ ScavTrap &ScavTrap::operator=(const Claptrap& obj)
 
 void ScavTrap::attack(std::string const & target)
 {
-    std::cout << "ScavTrap " << _name << " attack " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
+    if (energy_points > 0)
+    {
+        energy_points -= 1;
+        std::cout << "ScavTrap " << _name << " attack " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
+    }
 }
 
 void ScavTrap::takeDamage(unsigned int amount)

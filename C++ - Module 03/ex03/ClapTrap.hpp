@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:38:17 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/03 17:35:32 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:57:52 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Claptrap
         int getEnergyPoints() const;
         int getAttackDamage() const;
         Claptrap &operator=(const Claptrap &obj);
-        void attack(std::string const & target);
+        void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         ~Claptrap();

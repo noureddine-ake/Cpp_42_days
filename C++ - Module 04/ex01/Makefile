@@ -6,15 +6,15 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 20:56:22 by nakebli           #+#    #+#              #
-#    Updated: 2023/11/06 14:00:54 by nakebli          ###   ########.fr        #
+#    Updated: 2023/11/07 21:44:21 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Polymorphism
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp Animal.cpp Brain.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
-HERDERS = ClapTrap.hpp
+HERDERS = Animal.hpp Brain.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

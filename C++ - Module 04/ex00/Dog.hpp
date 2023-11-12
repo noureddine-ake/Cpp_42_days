@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 16:53:20 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/05 20:18:54 by nakebli          ###   ########.fr       */
+/*   Created: 2023/11/07 20:42:02 by nakebli           #+#    #+#             */
+/*   Updated: 2023/11/07 20:42:26 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	Claptrap bot("adam");
-	Claptrap bot2("eve");
-	FragTrap bot3("robot");
-	FragTrap bot4("pipo");
-	
-	bot3 = bot2;
-	bot.setAttackDamage(5);
-	bot.attack("eve");
-	bot2.takeDamage(5);
-	bot3.beRepaired(10);
-	bot3.highFivesGuys();
-}
+    public:
+        Dog();
+        Dog(const Dog &obj);
+        Dog &operator=(const Dog &other);
+        ~Dog();
+        void makeSound() const;
+};
+
+#endif

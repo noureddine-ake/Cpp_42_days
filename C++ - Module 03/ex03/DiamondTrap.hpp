@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:43:26 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/04 21:05:16 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/06 00:27:45 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@
             DiamondTrap();
             DiamondTrap(std::string name);
             DiamondTrap(DiamondTrap const & src);
-            ~DiamondTrap(void);
-            void attack(std::string const & target);
             DiamondTrap & operator=(DiamondTrap const & rhs);
-
+            void attack(std::string const & target);
+            ~DiamondTrap(void);
             void whoAmI(void);
     };
 

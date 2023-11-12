@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:53:20 by nakebli           #+#    #+#             */
-/*   Updated: 2023/11/04 21:28:40 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:59:18 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ int main()
 {
 	DiamondTrap diamondTrap("DiamondTrap");
 	std::cout << std::endl;
+	DiamondTrap test(diamondTrap);
 	std::cout << std::endl;
+	DiamondTrap pipo("pipo");
+	diamondTrap = pipo;
 	diamondTrap.attack("target");
 	diamondTrap.whoAmI();
 	std::cout << std::endl;

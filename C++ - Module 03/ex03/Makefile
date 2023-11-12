@@ -6,11 +6,11 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 20:56:22 by nakebli           #+#    #+#              #
-#    Updated: 2023/11/04 16:43:19 by nakebli          ###   ########.fr        #
+#    Updated: 2023/11/06 13:55:24 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = DiamondTrap
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

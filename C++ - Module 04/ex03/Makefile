@@ -6,15 +6,20 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 20:56:22 by nakebli           #+#    #+#              #
-#    Updated: 2023/11/06 14:00:54 by nakebli          ###   ########.fr        #
+#    Updated: 2023/11/12 13:28:37 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Polymorphism
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp \
+	AMateria.cpp \
+	ICharacter.cpp \
+	MateriaSource.cpp \
 
-HERDERS = ClapTrap.hpp
+HERDERS = AMateria.hpp \
+	ICharacter.hpp \
+	MateriaSource.hpp \
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
