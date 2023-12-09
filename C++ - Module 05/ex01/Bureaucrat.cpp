@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:18:33 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/07 16:34:16 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/09 11:12:48 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bc)
 {
-    out     << "Form name   : \n" << bc.getName() << std::endl
-            << "His Grade   : \n" << bc.getGrade() << std::endl;
+    out     << "Form name   : " << bc.getName() << "\t"
+            << "His Grade   : " << bc.getGrade() << std::endl;
     return (out);
 }
 
@@ -102,7 +102,7 @@ void        Bureaucrat::demotion()
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor" << std::endl;
+    // std::cout << "Destructor" << std::endl;
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
@@ -113,4 +113,9 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "Grade is too high :)";
+}
+
+void    Bureaucrat::signForm(Form &form)
+{
+    std::cout   << _name << " signed " << form.getName() << std::endl;
 }

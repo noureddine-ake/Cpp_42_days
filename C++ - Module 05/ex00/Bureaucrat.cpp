@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:18:33 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/05 20:46:37 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/08 17:31:06 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
     this->_name = obj.getName();
     this->_grade = obj.getGrade();
     return (*this);
+}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bc)
+{
+    out     << "Form name   : " << bc.getName() << "\t"
+            << "His Grade   : " << bc.getGrade() << std::endl;
+    return (out);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj)

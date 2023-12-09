@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:39 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/07 16:23:50 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/09 10:38:59 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,18 @@ class Form {
             public:
                 const char* what() const throw();
         };
+        Form();
         Form(std::string nm, bool isg, int gts, int gte);
         Form(const Form &obj);
         ~Form();
         Form&	        operator=(Form const& other);
-        std::ostream&   operator<<(const Form& fixed) const;
         std::string     getName() const;
         bool            getSigne() const;
         int             getGtoSigne() const;
         int             getGtoexe() const;
         void            beSigned(Bureaucrat &smn);
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bc);
 
 #endif

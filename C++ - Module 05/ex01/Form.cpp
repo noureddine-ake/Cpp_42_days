@@ -6,11 +6,19 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:13 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/07 16:23:18 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/09 11:17:33 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form()
+{
+    name = "default";
+    is_signed = false;
+    grade_to_signe = 100;
+    grade_to_execute = 100;
+}
 
 Form::Form (std::string nm, bool isg, int gts, int gte)
 {
@@ -55,14 +63,16 @@ Form&	        Form::operator=(Form const& other)
     this->is_signed = other.is_signed;
     this->grade_to_signe = other.grade_to_signe;
     this->grade_to_execute = other.grade_to_execute;
+    return (*this);
 }
 
-std::ostream&   Form::operator<<(const Form& fixed) const
+std::ostream& operator<<(std::ostream& out, const Form& form)
 {
-    std::cout   << "Form name         : " << name << std::endl
-                << "Signature Status  : " << is_signed << std::endl
-                << "Grade To Signe    : " << grade_to_signe << std::endl
-                << "Grade To Execurte : " << grade_to_signe << std::endl;
+    out     << "Form name         : " << form.getName() << std::endl
+            << "Signature Status  : " << form.getSigne() << std::endl
+            << "Grade To Signe    : " << form.getGtoSigne() << std::endl
+            << "Grade To Execurte : " << form.getGtoexe() << std::endl;
+    return (out);
 }
 
 std::string     Form::getName() const
@@ -88,11 +98,20 @@ int     Form::getGtoexe() const
 void            Form::beSigned(Bureaucrat &smn)
 {
     GradeTooLowException gl;
+    GradeTooHighException gh;
 
+    if (is_signed == true)
+        return ;
     try
     {
-        if (smn.getGrade() < this->getGtoSigne())
+        if (smn.getGrade() > this->getGtoSigne())
+        {
             throw gl;
+        }
+        if (smn.getGrade() < 1)
+            throw gh;
+        is_signed = true;
+        smn.signForm(*this);
     }
     catch(const std::exception& e)
     {
@@ -108,4 +127,9 @@ const char* Form::GradeTooLowException::what() const throw()
 const char* Form::GradeTooHighException::what() const throw()
 {
     return "Grade is too high :)";
+}
+
+Form::~Form()
+{
+    
 }
