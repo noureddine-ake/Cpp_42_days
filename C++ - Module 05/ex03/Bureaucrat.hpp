@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:18:41 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/09 12:03:47 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 00:37:29 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -44,7 +44,8 @@ class Bureaucrat
         int             getGrade() const;
         void            promotion();
         void            demotion();
-        void            signForm(Form &form);
+        void            signForm(AForm &form);
+        void            executeForm(AForm const & form);
         ~Bureaucrat();
 };
 
