@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:07:53 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/09 11:17:40 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:22:11 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int main ()
 
     Form *f = new Form("Hiring", false, 120, 120);
     Form *f2 = new Form("Hiring", false, 120, 120);
+    std::cout << *f << std::endl;
     try{
         f->beSigned(chef2);
         f2->beSigned(chef);

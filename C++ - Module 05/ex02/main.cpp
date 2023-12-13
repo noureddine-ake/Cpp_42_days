@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:07:53 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 00:44:14 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 20:36:14 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int main ()
     AForm *f3 = new PresidentialPardonForm("home");
 
     
-    std::cout << std::endl << " ----------------------------- " << std::endl;
     try
     {
         chef.demotion();
@@ -70,6 +69,7 @@ int main ()
         std::cout << "Error : " << e.what() << std::endl;
     }
     std::cout << chef << std::endl;
+    std::cout << *f << std::endl;
     delete f;
     delete f2;
     delete f3;

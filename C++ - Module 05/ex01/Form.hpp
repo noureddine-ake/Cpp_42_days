@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:39 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/09 10:38:59 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:23:22 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ class Form {
         void            beSigned(Bureaucrat &smn);
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bc);
+std::ostream& operator<<(std::ostream& out, const Form& bc);
 
 #endif

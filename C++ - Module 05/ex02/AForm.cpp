@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:13 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 00:36:03 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:37:06 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,4 +136,24 @@ const char* AForm::SignatureMissing::what() const throw()
 AForm::~AForm()
 {
     
+}
+
+void    AForm::setName(std::string nm)
+{
+    name = nm;
+}
+
+void    AForm::setSigne(bool isg)
+{
+    is_signed = isg;
+}
+
+void    AForm::setGtoSigne(int gts)
+{
+    grade_to_signe = gts;
+}
+
+void    AForm::setGtoexe(int gte)
+{
+    grade_to_execute = gte;
 }

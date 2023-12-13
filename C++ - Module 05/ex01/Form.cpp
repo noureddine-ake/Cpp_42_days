@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:13 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/09 11:17:33 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 20:28:00 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ Form&	        Form::operator=(Form const& other)
 
 std::ostream& operator<<(std::ostream& out, const Form& form)
 {
-    out     << "Form name         : " << form.getName() << std::endl
-            << "Signature Status  : " << form.getSigne() << std::endl
-            << "Grade To Signe    : " << form.getGtoSigne() << std::endl
+    out     << "Form name         : " << form.getName() << "\n"
+            << "Signature Status  : " << form.getSigne() << "\n"
+            << "Grade To Signe    : " << form.getGtoSigne() << "\n"
             << "Grade To Execurte : " << form.getGtoexe() << std::endl;
     return (out);
 }

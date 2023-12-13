@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:24 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 01:00:37 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 23:21:21 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
-    this->name = "ShrubberyCreationForm";
-    this->is_signed = false;
-    this->grade_to_signe = 145;
-    this->grade_to_execute = 137;
+    this->setName("ShrubberyCreationForm");
+    this->setSigne(false);
+    this->setGtoSigne(145);
+    this->setGtoexe(137);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 {
-    this->name = "ShrubberyCreationForm";
-    this->is_signed = false;
-    this->grade_to_signe = 145;
-    this->grade_to_execute = 137;
+    this->setName("ShrubberyCreationForm");
+    this->setSigne(false);
+    this->setGtoSigne(145);
+    this->setGtoexe(137);
     this->target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target, std::string name)
 {
-    this->name = name;
-    this->is_signed = false;
-    this->grade_to_signe = 145;
-    this->grade_to_execute = 137;
+    this->setName(name);
+    this->setSigne(false);
+    this->setGtoSigne(145);
+    this->setGtoexe(137);
     this->target = target;
 }
 
@@ -47,10 +47,10 @@ ShrubberyCreationForm&	        ShrubberyCreationForm::operator=(AForm const& oth
 {
     if (this!=&other)
     {
-        this->name = other.getName();
-        this->is_signed = other.getSigne();
-        this->grade_to_signe = other.getGtoSigne();
-        this->grade_to_execute = other.getGtoexe();
+        this->setName(other.getName());
+        this->setSigne(other.getSigne());
+        this->setGtoSigne(other.getGtoSigne());
+        this->setGtoexe(other.getGtoexe());
     }
     return (*this);
 }
@@ -63,9 +63,9 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     SignatureMissing sm;
     try
     {
-        if (executor.getGrade() > this->grade_to_execute)
+        if (executor.getGrade() > this->getGtoexe())
             throw gl;
-        if (this->is_signed == false)
+        if (this->getSigne() == false)
             throw sm;
         std::ofstream ofs(this->target + "_shrubbery" );
         if (ofs.is_open()) {
