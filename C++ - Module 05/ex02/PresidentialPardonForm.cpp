@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:58:14 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 22:56:23 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 10:49:10 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,10 @@ void    PresidentialPardonForm::execute(Bureaucrat const & executor) const
     {
         if (executor.getGrade() > this->getGtoexe())
             throw gl;
-        if (this->getSigne() == false)
+        else if (this->getSigne() == false)
             throw sm;
-        std::cout << this->target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+        else
+            std::cout << this->target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
     }
     catch(const std::exception& e)
     {

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:46:51 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 22:54:55 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 10:50:07 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,13 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
     {
         if (executor.getGrade() > this->getGtoexe())
             throw gl;
-        if (this->getSigne() == false)
+        else if (this->getSigne() == false)
             throw sm;
-        std::cout   << "Brzz tak tak douf douf znnnn " << std::endl
-                    << this->target << " has been robotomized successfully 50\% of the time." << std::endl;
+        else
+        {
+            std::cout   << "Brzz tak tak douf douf znnnn " << std::endl
+                        << this->target << " has been robotomized successfully 50\% of the time." << std::endl;
+        }
     }
     catch(const std::exception& e)
     {

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:57:25 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 01:01:17 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 15:00:29 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class PresidentialPardonForm : public AForm
     public :
         PresidentialPardonForm();
         PresidentialPardonForm(std::string target);
-        PresidentialPardonForm(std::string target, std::string name);
         PresidentialPardonForm(PresidentialPardonForm &other);
+        PresidentialPardonForm(std::string target, std::string name);
         PresidentialPardonForm&	        operator=(AForm const& other);
         ~PresidentialPardonForm();
         void    execute(Bureaucrat const & executor) const;

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:18:33 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/08 17:31:06 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 10:35:21 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
     std::cout << "Bureaucrat parametred constructor" << std::endl;
     _name = name;
     GradeTooHighException gh;
-    GradeTooHighException gl;
+    GradeTooLowException gl;
     try
     {
         if (grade > 150)
+        {
+            grade = 150;    
             throw gl;
-        if (grade < 1)
+        }
+        else if (grade < 1)
+        {
+            grade = 1;
             throw gh;
-        this->_grade = grade;
+        }
+        else
+            this->_grade = grade;
     }
     catch(const std::exception& e)
     {
@@ -77,7 +84,8 @@ void        Bureaucrat::promotion()
     {
         if (this->getGrade() - 1 < 1)
             throw gh;
-        _grade--;
+        else
+            _grade--;
     }
     catch(const std::exception& e)
     {
@@ -92,7 +100,8 @@ void        Bureaucrat::demotion()
     {
         if (this->getGrade() + 1 > 150)
             throw gl;
-        _grade++;
+        else
+            _grade++;
     }
     catch(const std::exception& e)
     {

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:13 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 20:28:00 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 11:18:05 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,17 @@ Form::Form (std::string nm, bool isg, int gts, int gte)
     try
     {
         if (gts < 1)
+        {
+            grade_to_signe = 1;
             throw gh;
+        }
         else if (gts > 150)
+        {
+            grade_to_signe = 150;
             throw gl;
-        grade_to_signe = gts;
+        }
+        else
+            grade_to_signe = gts;
     }
     catch(const std::exception& e)
     {
@@ -41,10 +48,17 @@ Form::Form (std::string nm, bool isg, int gts, int gte)
     try
     {
         if (gte < 1)
+        {
+            grade_to_execute = 1;
             throw gh;
+        }
         else if (gte > 150)
+        {
+            grade_to_execute = 150;
             throw gl;
-        grade_to_execute = gte;
+        }
+        else
+            grade_to_execute = gte;
     }
     catch(const std::exception& e)
     {
@@ -101,17 +115,18 @@ void            Form::beSigned(Bureaucrat &smn)
     GradeTooHighException gh;
 
     if (is_signed == true)
+    {
+        std::cout << "Form is already signed" << std::endl;
         return ;
+    }
     try
     {
         if (smn.getGrade() > this->getGtoSigne())
-        {
             throw gl;
-        }
-        if (smn.getGrade() < 1)
+        else if (smn.getGrade() < 1)
             throw gh;
-        is_signed = true;
-        smn.signForm(*this);
+        else
+            is_signed = true;
     }
     catch(const std::exception& e)
     {

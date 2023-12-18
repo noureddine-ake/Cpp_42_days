@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:44:22 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 01:00:09 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 15:05:08 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class RobotomyRequestForm : public AForm
     public :
         RobotomyRequestForm();
         RobotomyRequestForm(std::string target);
-        RobotomyRequestForm(std::string target, std::string name);
         RobotomyRequestForm(RobotomyRequestForm &other);
+        RobotomyRequestForm(std::string target, std::string name);
         RobotomyRequestForm&	        operator=(AForm const& other);
         ~RobotomyRequestForm();
         void    execute(Bureaucrat const & executor) const;

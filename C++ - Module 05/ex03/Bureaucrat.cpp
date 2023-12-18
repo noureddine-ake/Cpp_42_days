@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:18:33 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 01:07:10 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 11:16:23 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 {
     _name = name;
     GradeTooHighException gh;
-    GradeTooHighException gl;
+    GradeTooLowException gl;
     try
     {
         if (grade > 150)
+        {
+            _grade = 150;
             throw gl;
-        if (grade < 1)
+        }
+        else if (grade < 1)
+        {
+            _grade = 1;
             throw gh;
-        this->_grade = grade;
+        }
+        else
+            this->_grade = grade;
     }
     catch(const std::exception& e)
     {
@@ -73,7 +80,8 @@ void        Bureaucrat::promotion()
     {
         if (this->getGrade() - 1 < 1)
             throw gh;
-        _grade--;
+        else
+            _grade--;
     }
     catch(const std::exception& e)
     {
@@ -88,7 +96,8 @@ void        Bureaucrat::demotion()
     {
         if (this->getGrade() + 1 > 150)
             throw gl;
-        _grade++;
+        else
+            _grade++;
     }
     catch(const std::exception& e)
     {
@@ -110,10 +119,16 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 
 void    Bureaucrat::signForm(AForm &form)
 {
+    if (form.getSigne() == true)
+    {
+        std::cout << _name << " cannot sign " << form.getName() << " because it's already signed" << std::endl;
+        return ;
+    }
     try
     {
         form.beSigned(*this);
-        std::cout << _name << " signs " << form.getName() << std::endl;
+        if (form.getSigne() == true)
+            std::cout << _name << " signs " << form.getName() << std::endl;
     }
     catch(const std::exception& e)
     {

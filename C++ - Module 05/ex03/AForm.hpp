@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:55:39 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 23:09:09 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:36:46 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat;
 
 class AForm {
-    protected :
+    private :
         std::string   name;
         bool                is_signed;
         int           grade_to_signe;

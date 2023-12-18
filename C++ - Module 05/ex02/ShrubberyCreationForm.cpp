@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:24 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/12 22:55:36 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/12/17 10:54:08 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,28 @@ ShrubberyCreationForm&	        ShrubberyCreationForm::operator=(AForm const& oth
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+
+void   ShrubberyCreationForm::write_tree() const
+{
+    std::ofstream ofs(this->target + "_shrubbery" );
+    if (ofs.is_open()) {
+        ofs << "        ^        " << std::endl;
+        ofs << "       ^^^       " << std::endl;
+        ofs << "      ^^^^^      " << std::endl;
+        ofs << "     ^^^^^^^     " << std::endl;
+        ofs << "    ^^^^^^^^^    " << std::endl;
+        ofs << "   ^^^^^^^^^^^   " << std::endl;
+        ofs << "  ^^^^^^^^^^^^^  " << std::endl;
+        ofs << " ^^^^^^^^^^^^^^^ " << std::endl;
+        ofs << "^^^^^^^^^^^^^^^^^" << std::endl;
+        ofs << "       |||       " << std::endl;
+        ofs.close();
+    }
+    else {
+        std::cerr << "Unable to open the file." << std::endl;
+    }
+}
+
 void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     GradeTooLowException gl;
@@ -56,29 +78,10 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     {
         if (executor.getGrade() > this->getGtoexe())
             throw gl;
-        if (this->getSigne() == false)
+        else if (this->getSigne() == false)
             throw sm;
-        std::ofstream ofs(this->target + "_shrubbery" );
-        if (ofs.is_open()) {
-            const std::string green = "\033[32m";
-            const std::string brown = "\033[33m";
-            const std::string reset = "\033[0m";
-
-            ofs << "        ^        " << std::endl;
-            ofs << "       ^^^       " << std::endl;
-            ofs << "      ^^^^^      " << std::endl;
-            ofs << "     ^^^^^^^     " << std::endl;
-            ofs << "    ^^^^^^^^^    " << std::endl;
-            ofs << "   ^^^^^^^^^^^   " << std::endl;
-            ofs << "  ^^^^^^^^^^^^^  " << std::endl;
-            ofs << " ^^^^^^^^^^^^^^^ " << std::endl;
-            ofs << "^^^^^^^^^^^^^^^^^" << std::endl;
-            ofs << "       |||       " << std::endl;
-            ofs.close();
-        }
-        else {
-            std::cerr << "Unable to open the file." << std::endl;
-        }
+        else
+            this->write_tree();
     }
     catch(const std::exception& e)
     {
