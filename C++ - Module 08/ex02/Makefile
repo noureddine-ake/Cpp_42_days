@@ -5,16 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/18 23:37:25 by nakebli           #+#    #+#              #
-#    Updated: 2023/12/18 23:37:27 by nakebli          ###   ########.fr        #
+#    Created: 2023/12/23 23:02:32 by nakebli           #+#    #+#              #
+#    Updated: 2023/12/25 03:43:30 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Casting
 
-SRCS = main.cpp Base.cpp
+NAME = ex02
 
-HERDERS = Base.hpp
+SRCS = main.cpp
+
+HERDERS = MutantStack.hpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -24,6 +25,9 @@ all: $(NAME)
 
 $(NAME): $(HERDERS) $(OBJ)
 	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp $(HERDERS)
+	c++ $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

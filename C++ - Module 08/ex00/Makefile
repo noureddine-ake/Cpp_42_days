@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/18 23:37:25 by nakebli           #+#    #+#              #
-#    Updated: 2023/12/18 23:37:27 by nakebli          ###   ########.fr        #
+#    Created: 2023/12/23 23:02:56 by nakebli           #+#    #+#              #
+#    Updated: 2023/12/24 12:01:48 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Casting
+NAME = ex00
 
-SRCS = main.cpp Base.cpp
+SRCS = main.cpp
 
-HERDERS = Base.hpp
+HERDERS = easyfind.hpp
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -24,6 +24,9 @@ all: $(NAME)
 
 $(NAME): $(HERDERS) $(OBJ)
 	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp $(HERDERS)
+	c++ $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 21:51:36 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/21 05:28:53 by nakebli          ###   ########.fr       */
+/*   Created: 2023/12/24 11:44:42 by nakebli           #+#    #+#             */
+/*   Updated: 2023/12/27 05:27:23 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
- 
+#include "easyfind.hpp"
+
 int main()
 {
-    Data s;
- 
-    s.s1 = "Hello";
-    s.n = 42;
-    s.s2 = "Hi";
- 
-
-    uintptr_t p = Serializer::serialize(&s);
-    std::cout << p << std::endl;
-    Data *data = Serializer::deserialize(p);
-    std::cout << *data << std::endl;
+    std::vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    std::cout << easyfind(v, 2) << std::endl;
+    try
+    {
+        std::cout << easyfind(v, 4) << std::endl;
+    }
+    catch (...)
+    {
+        std::cout << "Not found" << std::endl;
+    }
     return 0;
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 21:51:36 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/21 05:28:53 by nakebli          ###   ########.fr       */
+/*   Created: 2023/12/22 00:07:06 by nakebli           #+#    #+#             */
+/*   Updated: 2023/12/23 04:28:29 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
- 
-int main()
-{
-    Data s;
- 
-    s.s1 = "Hello";
-    s.n = 42;
-    s.s2 = "Hi";
- 
+#ifndef ITER_HPP
+# define ITER_HPP
 
-    uintptr_t p = Serializer::serialize(&s);
-    std::cout << p << std::endl;
-    Data *data = Serializer::deserialize(p);
-    std::cout << *data << std::endl;
-    return 0;
+#include <iostream>
+
+template <typename T>
+
+void	iter(T *array, size_t size, void (*f)(T const &))
+{
+    for (size_t i = 0; i < size; i++)
+        f(array[i]);
 }
+
+template <typename T>
+
+void	print(T const &x)
+{
+    std::cout << x << std::endl;
+}
+
+#endif
