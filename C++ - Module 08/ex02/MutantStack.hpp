@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 03:43:40 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/25 03:43:59 by nakebli          ###   ########.fr       */
+/*   Updated: 2024/01/17 23:03:56 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <iostream>
 
 template <typename T>
 class MutantStack : public std::stack<T>
