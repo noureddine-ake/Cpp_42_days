@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 11:53:20 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/24 14:51:34 by nakebli          ###   ########.fr       */
+/*   Updated: 2024/01/22 02:49:43 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define SPAN_HPP
 
 #include <iostream>
+#include <vector>
 
 class Span {
     private:
-        unsigned int    _n;
-        unsigned int    _size;
-        int             *_arr;
+        unsigned int        _n;
+        unsigned int        _size;
+        std::vector<int>    _arr;
         Span() {};
     public:
         Span(unsigned int n);
@@ -31,6 +32,8 @@ class Span {
         void    addNumber(int n);
         int     shortestSpan();
         int     longestSpan();
+        void    fillArr();
+        void    printArr();
 };
 
 #endif

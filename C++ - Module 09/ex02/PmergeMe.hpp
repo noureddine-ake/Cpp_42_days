@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 00:33:07 by nakebli           #+#    #+#             */
-/*   Updated: 2024/01/22 02:11:47 by nakebli          ###   ########.fr       */
+/*   Created: 2024/01/19 16:24:35 by nakebli           #+#    #+#             */
+/*   Updated: 2024/01/22 05:32:49 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#pragma once
 
 #include <iostream>
 #include <vector>
+#include <deque>
+
+class PmergeMe
+{
+    private:
+        std::vector<int>    _v;
+        std::deque<int>     _d;
+    public:
+        PmergeMe() {};
+        ~PmergeMe() {};
+
+        std::vector<int>    getVector() const;
+        std::deque<int>     getDeque() const;
+};
 
 template <typename T>
-int		easyfind(T &container, int n)
-{
-    typename T::iterator it;
+void    parseData(char **av, T & _a);
 
-    it = std::find(container.begin(), container.end(), n);
-    if (it != container.end())
-        return (*it);
-    throw std::exception();
-}
+template <typename T>
+void    sort_arr(T & v, char **av);
 
-#endif
+template <typename T>
+void    print_arr(T& v);

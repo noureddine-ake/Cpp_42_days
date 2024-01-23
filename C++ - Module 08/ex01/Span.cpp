@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 11:55:35 by nakebli           #+#    #+#             */
-/*   Updated: 2023/12/24 14:51:11 by nakebli          ###   ########.fr       */
+/*   Updated: 2024/01/22 02:51:08 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Span::Span(unsigned int n) : _n(n), _size(0)
 {
-    this->_arr = new int[n];
 }
 
 Span::Span(Span const & src)
@@ -24,7 +23,6 @@ Span::Span(Span const & src)
 
 Span::~Span()
 {
-    delete [] this->_arr;
 }
 
 Span & Span::operator=(Span const & src)
@@ -42,8 +40,9 @@ void    Span::addNumber(int n)
 {
     if (this->_size < this->_n)
     {
-        this->_arr[this->_size] = n;
+        this->_arr.push_back(n);
         this->_size++;
+        std::sort(this->_arr.begin(), this->_arr.end());
     }
     else
         throw std::exception();
@@ -51,43 +50,43 @@ void    Span::addNumber(int n)
 
 int     Span::shortestSpan()
 {
-    int     min = 2147483647;
-    int     tmp;
+    int     min = INT_MAX;
 
     if (this->_size < 2)
         throw std::exception();
-    for (unsigned int i = 0; i < this->_size; i++)
+    std::vector<int>::iterator it = this->_arr.begin();
+    std::vector<int>::iterator ite = this->_arr.end();
+    for (; it != ite - 1; it++)
     {
-        for (unsigned int j = i + 1; j < this->_size; j++)
-        {
-            tmp = this->_arr[i] - this->_arr[j];
-            if (tmp < 0)
-                tmp *= -1;
-            if (tmp < min)
-                min = tmp;
-        }
+        if (abs(*(it + 1) - *it) < min)
+            min = abs(*(it + 1) - *it);
     }
     return (min);
 }
 
 int     Span::longestSpan()
 {
-    int     max = 0;
-    int     tmp;
-
     if (this->_size < 2)
         throw std::exception();
-    for (unsigned int i = 0; i < this->_size; i++)
-    {
-        for (unsigned int j = i + 1; j < this->_size; j++)
-        {
-            tmp = this->_arr[i] - this->_arr[j];
-            if (tmp < 0)
-                tmp *= -1;
-            if (tmp > max)
-                max = tmp;
-        }
-    }
-    return (max);
+    return (abs(*(_arr.end() - 1) - *(_arr.begin())));
 }
 
+void    Span::fillArr()
+{
+    for (unsigned int i = 0; i < this->_n && this->_size < this->_n; i++)
+    {
+        this->_arr.push_back(rand() % _n);
+        this->_size++;
+    }
+    std::sort(this->_arr.begin(), this->_arr.end());
+}
+
+void    Span::printArr()
+{
+    std::cout << "------Array-----" << std::endl;
+    std::cout << "Size: " << this->_arr.size() << std::endl;
+    std::cout << ": " << this->_n << std::endl;
+    for (std::vector<int>::iterator it = _arr.begin(); it < this->_arr.end(); it++)
+        std::cout << *it << std::endl;
+    std::cout << "----------------" << std::endl;
+}

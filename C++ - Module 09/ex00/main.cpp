@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 00:33:07 by nakebli           #+#    #+#             */
-/*   Updated: 2024/01/22 02:11:47 by nakebli          ###   ########.fr       */
+/*   Created: 2024/01/19 12:55:39 by nakebli           #+#    #+#             */
+/*   Updated: 2024/01/19 13:20:15 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "BitcoinExchange.hpp"
+#include <fstream>
 
-#include <iostream>
-#include <vector>
-
-template <typename T>
-int		easyfind(T &container, int n)
+int main (int ac, char **av)
 {
-    typename T::iterator it;
-
-    it = std::find(container.begin(), container.end(), n);
-    if (it != container.end())
-        return (*it);
-    throw std::exception();
+    (void)av;
+    if (ac == 2)
+    {
+        BitcoinExchange exchange;
+        exchange.print(av[1]);
+        return (0);
+    }
+    std::cout << "Usage: ./bitcoin [currency]" << std::endl;
+    return (1);
 }
-
-#endif
