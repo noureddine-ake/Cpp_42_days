@@ -1,5 +1,10 @@
 #include "RPN.hpp"
 
+void lek(void)
+{
+    system("leaks RPN");
+}
+
 int main (int ac, char **av)
 {
     if (ac != 2)

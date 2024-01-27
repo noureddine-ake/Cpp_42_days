@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:24:35 by nakebli           #+#    #+#             */
-/*   Updated: 2024/01/24 01:29:58 by nakebli          ###   ########.fr       */
+/*   Updated: 2024/01/27 13:13:28 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <ctime>
 
 class PmergeMe
 {
-    private:
-        std::vector<int>    _v;
-    public:
-        PmergeMe() {};
-        ~PmergeMe() {};
+	private:
+		std::vector<int>    _v;
+		std::deque<int>     _deq;
+	public:
+		PmergeMe() {};
+		~PmergeMe() {};
 
-        std::vector<int>    getVector() const;
-        void    parseData(char **av, std::vector<int> & _a);
-        void    sort_arr(std::vector<int> & v, char **av);
-        void    print_arr(std::vector<int> & v);
+		void				parseData(char **av);
+		void				sort_arr(char **av);
+		void				print_arr();
 };
